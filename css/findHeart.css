@@ -10,7 +10,7 @@ body{
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    background-color: rgb(34, 4, 3);
+    background-color: rgb(255, 202, 200);
 }
 
 #SiteTitle{
@@ -20,7 +20,7 @@ body{
     align-items: center;
     font-size: 2.5em;
     font-weight: 500;
-    background-color: rgb(100, 21, 21);
+    background-color:rgb(233, 219, 213);
 }
 
 
@@ -36,7 +36,7 @@ height:calc(100vh - 80px);
 }
 
 #wrapper{
-    color: white;
+    color: rgb(148, 82, 82);
     height: 100vh;
 }
 #heart{
@@ -67,7 +67,7 @@ height:calc(100vh - 80px);
 
 #restart{
     
-    color: #fff;
+    color: rgb(148, 82, 82);
     position: absolute;
     top:0;
     width: 100vw;
@@ -85,7 +85,7 @@ height:calc(100vh - 80px);
 }
 
 #restartLink{
-    color:rgb(230, 169, 169)
+    color:rgb(148, 82, 82)
 }
 #restartLink:hover{
     color:rgb(233, 99, 99);
@@ -99,18 +99,18 @@ height:calc(100vh - 80px);
     justify-content: center;
     width: 100vw;
     margin: auto;
-    color: white;
-    
+    color: rgba(18, 61, 61, 0.37);
+    font-weight: 800;
     position: fixed;
     bottom:5px;
     z-index: 5;
 }
 
 #builder a{
-    color: rgb(21, 165, 190);
+    color: rgb(26, 143, 163);
     text-decoration: none;
     margin: 0 10px;
-    font-weight: 800;
+    
 }
 
 
@@ -125,7 +125,8 @@ height:calc(100vh - 80px);
 }
 
 #navleft{
-    color: rgb(0, 240, 240);
+    color: rgba(18, 61, 61, 0.37);
+    box-shadow: 0px 0px 10px 0px rgba(23, 109, 109, 0.37);
 }
 
 #Start{
