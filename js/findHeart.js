@@ -61,7 +61,7 @@ function gameLoop() {
       y + 80
     );
     volume = 1 - 0.01 * (distance / 12.5);
-    volume = Math.max(0, volume).toFixed(1);
+    volume = Math.max(0, volume).toFixed(2);
     console.log(volume);
     audio.volume = volume;
   });
