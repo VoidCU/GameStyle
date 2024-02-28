@@ -71,3 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
   audio.play();
   gameLoop();
 });
+
+stopAudio = () => {
+  audio.pause();
+};

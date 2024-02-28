@@ -91,3 +91,22 @@ height:calc(100vh - 80px);
     text-decoration: none;
     cursor: pointer;
 }
+
+
+#builder{
+    display:flex;
+    justify-content: center;
+    width: 100vw;
+    margin: auto;
+    color: white;
+    
+    position: fixed;
+    bottom:5px;
+    z-index: 5;
+}
+
+#builder a{
+    color: rgb(21, 185, 214);
+    text-decoration: none;
+    margin: 0 10px;
+}
