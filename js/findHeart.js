@@ -1,6 +1,6 @@
-console.log('Hello World');
 const width = window.innerWidth - 160;
 const height = Math.round(window.innerHeight - 160) - 90;
+count = 0;
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
@@ -30,7 +30,8 @@ heart.addEventListener('click', function () {
   const screenCenterX = window.innerWidth / 2 - heart.offsetWidth / 2;
   const screenCenterY = window.innerHeight / 2 - heart.offsetHeight / 2 - 80;
   const animationDuration = 2000; // 1 second in milliseconds
-
+  count = count + 1;
+  document.getElementById('value').innerHTML = count;
   // Get the current position of the heart
   const currentX = parseInt(heart.style.left, 10) || 0; // Default to 0 if not set
   const currentY = parseInt(heart.style.top, 10) || 0; // Default to 0 if not set
