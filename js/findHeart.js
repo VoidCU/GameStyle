@@ -54,23 +54,41 @@ function gameLoop() {
 
   wrapper.addEventListener('mousemove', function (event) {
     audio.play();
+
     const distance = getDistance(
       event.clientX,
       event.clientY - 80,
       x + 80,
       y + 80
     );
-    volume = 1 - 0.01 * (distance / 12.5);
-    volume = Math.max(0, volume).toFixed(2);
-    console.log(volume);
+
+    // volume = 1 - 0.01 * (distance / 12.5);
+    // volume = Math.max(0, volume).toFixed(2);
+    // console.log(volume);
+
+    if (distance < 200) {
+      volume = 1;
+    } else if (distance < 400) {
+      volume = 0.7;
+    } else if (distance < 600) {
+      volume = 0.4;
+    } else if (distance < 800) {
+      volume = 0.3;
+    } else if (distance < 1000) {
+      volume = 0.2;
+    } else {
+      volume = 0.1;
+    }
     audio.volume = volume;
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+StartGame = () => {
+  document.getElementById('Start').style.display = 'none';
+  audio.volume = 0.1;
   audio.play();
   gameLoop();
-});
+};
 
 stopAudio = () => {
   audio.pause();
