@@ -106,7 +106,7 @@ height:calc(100vh - 80px);
     z-index: 5;
 }
 
-#builder a{
+#builderLink{
     color: rgb(26, 143, 163);
     text-decoration: none;
     margin: 0 10px;
@@ -145,4 +145,21 @@ height:calc(100vh - 80px);
     #navleft{
         display: none;
     }
+}
+
+#buyCoffee{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#buyCoffee a{
+    color: rgb(26, 143, 163);
+    text-decoration: none;
+}
+
+#buyCoffee img{
+    height: 1rem;
 }
