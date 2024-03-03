@@ -1,6 +1,7 @@
 const width = window.innerWidth - 160;
 const height = Math.round(window.innerHeight - 160) - 90;
 count = 0;
+playing = false;
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
@@ -21,10 +22,12 @@ const restart = document.getElementById('restart');
 document.getElementById('restartLink').addEventListener('click', function () {
   heartImage.style.display = 'none';
   restart.style.display = 'none';
+  playing = true;
   gameLoop();
 });
 
 heart.addEventListener('click', function () {
+  playing = false;
   heartImage.style.display = 'block';
   restart.style.display = 'flex';
   const screenCenterX = window.innerWidth / 2 - heart.offsetWidth / 2;
@@ -39,7 +42,7 @@ heart.addEventListener('click', function () {
   // Calculate the difference in coordinates for movement
   const deltaX = screenCenterX - currentX;
   const deltaY = screenCenterY - currentY;
-
+  audio.playbackRate = 1;
   // Animate the heart smoothly to the center
   heart.style.transition = `left ${animationDuration}ms ease-in-out, top ${animationDuration}ms ease-in-out`;
   heart.style.left = `${currentX + deltaX * (1 / animationDuration) * 2000}px`; // Update left position
@@ -66,27 +69,31 @@ function gameLoop() {
     // volume = 1 - 0.01 * (distance / 12.5);
     // volume = Math.max(0, volume).toFixed(2);
     // console.log(volume);
+    if (!playing) {
+      audio.playbackRate = 1;
+    }
 
     if (distance < 200) {
-      volume = 1;
+      playRate = 4;
     } else if (distance < 400) {
-      volume = 0.7;
+      playRate = 2;
     } else if (distance < 600) {
-      volume = 0.4;
+      playRate = 1.5;
     } else if (distance < 800) {
-      volume = 0.3;
+      playRate = 1;
     } else if (distance < 1000) {
-      volume = 0.2;
+      playRate = 0.75;
     } else {
-      volume = 0.1;
+      playRate = 0.5;
     }
-    audio.volume = volume;
+    audio.playbackRate = playRate;
   });
 }
 
 StartGame = () => {
   document.getElementById('Start').style.display = 'none';
-  audio.volume = 0.1;
+  audio.volume = 1;
+  playing = true;
   audio.play();
   gameLoop();
 };
